@@ -2,3 +2,18 @@
   position: absolute;
   background-color: black;
 }
+
+.specimen {
+  border-radius: 50%;
+  background-color: paleturquoise;
+}
+
+.food {
+  border-radius: 50%;
+  background-color: palegreen;
+}
+
+.entity {
+  position: absolute;
+}
+
