@@ -13,6 +13,7 @@ class Specimen extends Entity {
   seek(target) {
     if (!target) return
     this.moveTowards(target)
+    this.update()
   }
 
   moveTowards(target) {
