@@ -9,7 +9,7 @@ import Food from '../physics/food';
 import './styles.css';
 
 class Canvas extends React.Component {
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.props.actions.addSpecimen(
       new Specimen({ id: 1, x: 200, y: 200 })
     )
@@ -17,6 +17,18 @@ class Canvas extends React.Component {
     this.props.actions.addFood(
       new Food({ id: 1, x: 400, y: 400 })
     )
+
+    this.run()
+  }
+
+  run() {
+    setInterval(() => {
+      this.props.specimens.map(specimen => {
+        specimen.seek(this.props.foods[0])
+        this.props.actions.updateSpecimen(specimen)
+        return specimen
+      })
+    }, 100)
   }
 
   render() {
@@ -31,6 +43,7 @@ class Canvas extends React.Component {
     {
       this.props.specimens.map(specimen => <div
         className="specimen entity"
+        key={specimen.id}
         style={{
           top: specimen.position.y,
           left: specimen.position.x,
@@ -43,6 +56,7 @@ class Canvas extends React.Component {
     {
       this.props.foods.map(food => <div
         className="food entity"
+        key={food.id}
         style={{
           top: food.position.y,
           left: food.position.x,

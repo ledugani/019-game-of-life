@@ -8,6 +8,8 @@ class Entity {
     this.maxForce = props.maxForce || 5
 
     this.position = new Vector(props.x || 0, props.y || 0)
+    this.velocity = new Vector(props.vx || 0, props.vy || 0)
+    this.acceleration = new Vector(props.ax || 0, props.ay || 0)
   }
 }
 
