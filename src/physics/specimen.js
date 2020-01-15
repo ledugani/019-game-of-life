@@ -17,6 +17,7 @@ class Specimen extends Entity {
 
   moveTowards(target) {
     const force = this.steer(target)
+    this.acceleration = this.acceleration.add(force)
   }
 
   steer(target) {
@@ -33,6 +34,8 @@ class Specimen extends Entity {
 
   update() {
     this.position = this.position.add(this.velocity)
+    this.velocity = this.velocity.add(this.acceleration)
+    this.acceleration = this.acceleration.multiply(0)
   }
 }
 

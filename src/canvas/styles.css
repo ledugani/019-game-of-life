@@ -6,6 +6,7 @@
 .specimen {
   border-radius: 50%;
   background-color: paleturquoise;
+  transform: translate(-25%, -25%)
 }
 
 .food {

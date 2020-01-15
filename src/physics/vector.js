@@ -9,7 +9,7 @@ class Vector {
   }
 
   normalize() {
-    return new Vector( this.x / this.length(), this.y / this.length )
+    return new Vector( this.x / this.length(), this.y / this.length() )
   }
 
   subtract(vector) {
